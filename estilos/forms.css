@@ -1,0 +1,183 @@
+/* Globales */
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-image: url(../imgs/form.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222;
+  background-position: center top;
+  background-repeat: no-repeat; /* No repite el fondo */
+  -webkit-background-size: 250% auto; /* Soluciona el bug del background con el teclado */
+}
+
+a { text-decoration: none; }
+
+fieldset {
+  background: #ffffffe6;
+  border: 1px;
+  padding: 0;
+  border-radius: 6px;
+  border-top: solid 30px #f62727e0;
+}
+
+/* Forms */
+
+.formBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.logo-cont {
+  position: absolute;
+  bottom: 80%;
+}
+
+.logo-cont-reset {
+  position: absolute;
+  bottom: 68%;
+}
+
+.logo-img {
+  max-width: 35%;
+}
+
+.formH1 {
+  position: relative;
+  font-size: 25px;
+  color: #242424;
+  margin-top: 20%;
+  margin-bottom: 7%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.msg-error {
+  font-family: Helvetica;
+  font-size: 13px;
+  line-height: 3;
+  color: #a94442;
+  background-color: #f6d3d3;
+  margin-top: -3%;
+  margin-bottom: 8%;
+}
+
+.field-wrapper {
+  position: relative;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 6%;
+}
+
+.required {
+  color: #c61212;
+  font-size: 70%;
+  float: right;
+  position:relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input, .input-reset {
+  border: 1.1px solid #ccc;
+  background: #ffffffe0;
+  outline: none;
+  font-weight: 500;
+  padding: 14px 35px;
+  width: 250px;
+  height: 7px;
+  transition: 0.25s;
+  color: #2e2e2e;
+  display:block !important;
+  overflow:hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+@-moz-document url-prefix() {  /* Margin Right de 30px para inputs en Firefox*/
+  .input {
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+
+  html { height: 100% } /* Soluciona el bug del background scroll en chrome mobile */
+
+}
+
+.input-icon{
+  position: absolute;
+  left: 27px;
+  top: calc(46% - 0.5em); /* Mantiene al al icono centrado, sin importar la altura del input */
+}
+
+.border {
+  height: 1px;
+  background: #f62727db;
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.input:focus + .border {
+  transform: scaleX(1);
+}
+
+.warning {
+  color: #464646;
+  font-size: 70%;
+  float: left;
+  position:relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.field-wrapper-btn {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.btn-top {
+  margin-top: 8%;
+}
+
+.btn-enable {
+  transition: background-color 1s ease-in-out;
+  background-color: #f62727e0;
+  color: white;
+}
+
+.btn-enable:hover {
+  background: #b90b0b;
+  transition: 0.5s;
+}
+
+.btn-enable, .btn-disable {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 35px;
+  width: 250px;
+  margin: 18px auto;
+}
+
+/* Desktop pantallas mas grandes */
+
+@media (min-width: 1650px) {
+
+  fieldset {
+    transform: scale(1.2, 1.2);
+  }
+  .logo-cont {
+    position: absolute;
+    bottom: 86.5%;
+  }
+
+}

@@ -1,0 +1,211 @@
+table {
+  border-collapse: collapse;
+}
+
+tr:hover {
+  background-color: #ff072926;
+  transition: 0s;
+}
+
+button {
+  background-color: #ff000000;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+#load_data {
+  margin: 4.5% 19% 7% 19%;
+  width: 62%;
+  line-height: 0;
+}
+
+.genero {
+  margin-right: 1.5%;
+  margin-left: -1.5%;
+}
+
+.text {
+  width: 100%;
+  padding-left: 1%;
+  font-size: 20px;
+  line-height: 46px;
+  text-align: left;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.artista:after {
+  content: '—';
+}
+
+.fecha {
+  float: right;
+}
+
+.fa-heart {
+  color: #ff0000 !important;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.player {
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  border: 2px solid #fff;
+  background-color: #f1f3f4;
+  width: 100%;
+  box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
+  z-index: 999;
+  outline:none;
+}
+
+.loading {
+  height: 25px;
+  position:relative;
+  left: 50%;
+  top: -90px;
+  color: #f03465;
+  font-size: 25px;
+  margin-top: 5%;
+}
+
+.cont {
+  margin-bottom: -7%;
+}
+
+@-moz-document url-prefix() {  /* Responsive Firefox*/
+
+  .player {
+    left: -0.3%;
+    bottom: -0.3%;
+    position: fixed;
+    border: 2px solid #444445;
+    width: 101%;
+    outline:none;
+  }
+
+  button::-moz-focus-inner { /* Vendria siendo un outline: none */
+    border: 0;
+  }
+
+}
+
+/* Mobile portrait */
+
+@media only screen and (max-width: 500px) {
+
+  #load_data {
+    margin: 4.5% 4.5% 30% 4.5%;
+    width: 90%;
+    text-align: left;
+  }
+
+  .text {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    line-height: 20px;
+    font-size: 13px;
+  }
+
+  .fecha {
+    margin-right: -1%;
+  }
+
+  .genero {
+    height: 20px;
+    margin-left: 1%;
+  }
+
+  .fa-heart{
+    font-size: 15px !important;
+  }
+
+  .artista:after {
+    content: '';
+  }
+
+  .titulo {
+    display: block;
+  }
+
+}
+
+/* Mobile portrait - .fecha y .titulo */
+
+@media only screen and (min-width: 360px) and (max-width: 370px) {
+
+   .fecha {
+    margin-top: -10%;
+  }
+
+  .titulo {
+    margin-left: 8%;
+  }
+
+}
+
+@media only screen and (min-width: 410px) and (max-width: 420px)  {
+
+   .fecha {
+    margin-top: -9%;
+  }
+
+  .titulo {
+    margin-left: 8%;
+  }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 330px) {
+
+  .text, .fecha, .fa-heart {
+    font-size: 11px;
+  }
+
+  .fecha {
+    margin-top: -12%;
+  }
+
+  .titulo {
+    margin-left: 7%;
+  }
+
+}
+
+@media only screen and (min-width: 375px) and (max-width: 385px) {
+
+  .fecha {
+    margin-top: -10%;
+  }
+
+   .titulo {
+    margin-left: 8%;
+  }
+
+}
+
+/* Mobile - Landscape */
+
+@media only screen and (min-width: 500px) and (max-width: 900px) { /* Mobile landscape */
+
+  #load_data {
+    margin: 4.5% 0% 30% 4.5%;
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .genero {
+    margin-left: 0%;
+  }
+
+  .text {
+    font-size: 15px;
+    line-height: 28px;
+  }
+
+  .fa-heart{
+    font-size: 15px;
+  }
+
+}

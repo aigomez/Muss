@@ -1,0 +1,329 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../imgs/snow.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #222;
+  background-repeat: no-repeat; /* No repite el fondo */
+  overflow-x: hidden; /* Oculta la barra de scroll horizontal */
+}
+
+a {
+  text-decoration: none;
+  user-select: none;
+}
+
+span {
+  user-select: none;
+}
+
+/* Cont */
+
+@media (min-width: 650px) { /* Desktop */
+
+  .fa-sign-out-alt {
+    font-size: 17px;
+    transform: scaleX(-1);
+    color: white !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+
+  html { height: 100% } /* Soluciona el bug del background scroll en chrome mobile */
+
+}
+
+/* Header */
+
+.container {
+  z-index: 999;
+  height: 60px;
+  background-color: #f03465;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  padding-right: 2%;
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.container .logo {
+  max-width: 250px;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.container .logo a img {
+  max-width: 100%;
+  max-height: 60px;
+}
+
+.container .navbar { /* Oculta el menu en mobile cuando se aprieta el boton con las 3 rayitas */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 0px;
+}
+
+.container .navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container .navbar ul li a  {
+  text-decoration: none;
+  color: #e2e2e2;
+  font-size: 16px;
+  text-transform: uppercase;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+  padding: 0 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sign-in {
+  position: absolute;
+  right: 0.7%;
+  font-weight: bolder;
+}
+
+.container .navbar ul .close { /* Posiciona la 'X' en mobile a la derecha, en desktop la oculta */
+  display: none;
+  text-align: right;
+  padding: 10px;
+}
+
+.container .navbar ul .close span { /* Agranda la 'X' */
+  font-size: 40px;
+  display: inline-block;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.container .navbar .icon-bar {
+  padding: 18px 8px;
+  width: 50px;
+  height: 60px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.fa { /* User & Bars Icon: color */
+  color: white;
+  cursor: pointer;
+}
+
+.fa-times { /* Cross Icon: color */
+  color: black;
+  cursor: pointer;
+}
+
+@media (min-width: 650px) { /* Sign In: desktop */
+  .icon-user {
+    display: none;
+  }
+
+  .icon-log {
+    position: relative;
+    top: 12px;
+  }
+
+  .container .navbar ul li a:hover { /* Hover en elemento de nav (mobile & desktop)*/
+    color: #ffffff;
+    transition: 0.3s;
+  }
+
+  .hide-sign-out-icon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  html { height: 100% } /* Soluciona el bug del background scroll en chrome mobile */
+
+  .icon-user { /* User Icon: mobile */
+    position: relative;
+    top: 15px;
+    right: 9px;
+    font-size: 15px;
+  }
+
+  .sign-in {
+    display: none;
+  }
+
+  .icon-bar {
+    position: relative;
+    top: -2.1px;
+    right: -2px;
+  }
+
+  .fa-sign-out-alt {
+    color: #555555;
+    transition: 0.3s;
+  }
+
+  .container { /* Posiciona a la derecha las 3 rayitas */
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: flex-end;
+    padding-right: 0%;
+  }
+
+  .container .navbar {  /* Posiciona a la derecha las 3 rayitas */
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: none;
+  }
+
+  .logo {
+    display: flex;
+    left: 0;
+    position: absolute;
+  }
+
+  .container .navbar ul { /* Muestra el logo en mobile, posiciona a la derecha las 3 rayitas */
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    position: fixed;
+    left: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-transition: left .3s;
+    -o-transition: left .3s;
+    transition: left .3s;
+  }
+
+  .container .navbar ul li a { /* Estilos para el nav que se muestra cuando se aprietan las 3 rayitas*/
+    padding: 10px;
+    font-size: 16px;
+    height: auto;
+    line-height: normal;
+    color: #555555;
+  }
+
+  .container .navbar ul li a {
+    background-color: rgb(255, 255, 255);
+    transition: 0.4s;
+  }
+
+  .container .navbar ul .close { /* Estilos para el nav que se muestra cuando se aprietan las 3 rayitas*/
+    display: block;
+  }
+
+  .container .navbar .icon-bar { /* Oculta el nav cuando se aprietan las 3 rayitas */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .container .navbar ._Menus-show { /* Desplaza el mobile menu hacia la izquierda*/
+    left: 0;
+  }
+
+  .body {
+    padding-top: 2%;
+    padding-left:3%;
+    padding-right: 1%;
+  }
+}
+
+/* Sign Out - Dropdown */
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f03465;
+  min-width: 180px;
+  height: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-weight: 100;
+  top: 8%;
+  right: 0.6%;
+  position: fixed;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content p {
+  position: relative;
+  top: -40%;
+  left: 26%;
+  user-select: none;
+}
+
+.dropdown-content:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+}
+
+.dropdown-content:before {
+  left: 85%;
+  border: 11px solid transparent;
+  border-bottom-color: #f03465;
+}
+
+@media (min-height: 680px) { /* Triangle 720 screen desktop */
+
+  .dropdown-content {
+    top: 10%;
+  }
+
+}
+
+@media (min-height: 950px) { /* Triangle 1080 screen desktop */
+
+ .dropdown-content {
+    top: 8%;
+  }
+
+}

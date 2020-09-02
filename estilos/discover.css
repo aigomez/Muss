@@ -1,0 +1,165 @@
+/* Globales */
+
+label > input { /* Oculta el cuadradito del checkbox */
+  display: none;
+}
+
+label > input + img {
+  cursor: pointer;
+}
+
+label > input:checked + img { /* Agranda la imagen (checkbox) si estÃƒÆ’Ã‚Â¡ checkeada */
+  transform: scale(1.15);
+  transition: 0.3s;
+  filter: blur(0px);
+}
+
+body {
+  background-image: url(../imgs/songs.png) !important;
+  background-color: #fff !important;
+  background-repeat: no-repeat; /* No repite el fondo*/
+}
+
+/* Discover */
+
+.cont {
+  max-width: 82%;
+  margin: 5% auto;
+  padding: 3%;
+  text-align: center;
+}
+
+.search {
+  border: 1.1px solid #ccc;
+  background: #ffffffe0;
+  outline: none;
+  font-weight: 500;
+  padding: 14px 35px;
+  width: 45%;
+  height: 7px;
+  color: #2e2e2e;
+  overflow: hidden;
+  margin-bottom: 3%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-icon {
+  position: absolute;
+  padding: 6px;
+  padding-right: 10px;
+  color: #464545;
+  transform: scaleX(-1); /* Invierte el iconito de la searchbar */
+}
+
+.fa-search {
+  color: #222222 !important;
+}
+
+.cont figure {
+  display: inline-block;
+}
+
+.gen-img {
+  height: 150px;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px 0 rgba(16, 16, 16, 0.63);
+  filter: blur(1.3px);
+}
+
+.cont figcaption {
+  margin-top: 7%;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans';
+}
+
+.btn-search {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  border: 1.1px solid #ccc;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 35px;
+  width: 30%;
+  margin: 18px auto;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffffe0;
+  color: #464545;
+}
+
+/* Desktop pantallas mas grandes */
+
+@media (min-width: 1650px) {
+
+  .cont {
+    max-width:75%;
+    margin-top: 4%;
+  }
+
+  .search {
+    margin-bottom: 4%;
+  }
+
+  .btn-search {
+    margin-top: 4%;
+  }
+
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 650px) {
+
+  html { height: 125%  !important} /* Soluciona el bug del background scroll en chrome mobile */
+
+  body { -webkit-background-size: 2000% auto !important; /* Soluciona el bug del background con el teclado */ }
+
+  .cont {
+    margin-top: 25%;
+    max-width:100%;
+  }
+
+  .search {
+    width: 80%;
+    font-size: 9px;
+    margin-bottom: 9%;
+    margin-top: 5%
+  }
+
+  .cont figure {
+    margin-right: 4%;
+    margin-left: 5%;
+  }
+
+  .gen-img {
+    height: 100px;
+  }
+
+  .btn-search {
+    width: 60%;
+  }
+
+  .search-icon {
+    margin-top: 5%;
+  }
+
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  .cont {
+    margin-top: 11%;
+    max-width:100%;
+  }
+
+  .search {
+    width: 80%;
+    margin-bottom: 4%;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width:620px) and (orientation: landscape) {
+  .cont {
+    margin-top: 15%;
+    max-width:100%;
+  }
+}
